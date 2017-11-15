@@ -26,7 +26,7 @@ public class Main {
         // create a resource config that scans for JAX-RS resources and providers
         // in hu.javagladiators.apps.heroesofempires.hero.rest package
         final ResourceConfig rc = new ResourceConfig().packages("hu.javagladiators.apps.heroesofempires.hero.rest");
-        
+        rc.register(new CORSFilter());
         rc.register(new AbstractBinder() {
             @Override
             protected void configure() {
